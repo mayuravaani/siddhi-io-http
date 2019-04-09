@@ -18,25 +18,24 @@
  */
 package org.wso2.extension.siddhi.io.http.source;
 
+import io.siddhi.annotation.Example;
+import io.siddhi.annotation.Extension;
+import io.siddhi.annotation.Parameter;
+import io.siddhi.annotation.SystemParameter;
+import io.siddhi.annotation.util.DataType;
+import io.siddhi.core.config.SiddhiAppContext;
+import io.siddhi.core.exception.ConnectionUnavailableException;
+import io.siddhi.core.stream.input.source.Source;
+import io.siddhi.core.stream.input.source.SourceEventListener;
+import io.siddhi.core.util.config.ConfigReader;
+import io.siddhi.core.util.transport.OptionHolder;
 import org.apache.log4j.Logger;
 import org.wso2.extension.siddhi.io.http.source.util.HttpSourceUtil;
 import org.wso2.extension.siddhi.io.http.util.HttpConstants;
 import org.wso2.extension.siddhi.io.http.util.HttpIoUtil;
-import org.wso2.siddhi.annotation.Example;
-import org.wso2.siddhi.annotation.Extension;
-import org.wso2.siddhi.annotation.Parameter;
-import org.wso2.siddhi.annotation.SystemParameter;
-import org.wso2.siddhi.annotation.util.DataType;
-import org.wso2.siddhi.core.config.SiddhiAppContext;
-import org.wso2.siddhi.core.exception.ConnectionUnavailableException;
-import org.wso2.siddhi.core.stream.input.source.Source;
-import org.wso2.siddhi.core.stream.input.source.SourceEventListener;
-import org.wso2.siddhi.core.util.config.ConfigReader;
-import org.wso2.siddhi.core.util.transport.OptionHolder;
 import org.wso2.transport.http.netty.contract.config.ListenerConfiguration;
 
 import java.util.Locale;
-import java.util.Map;
 
 import static org.wso2.extension.siddhi.io.http.util.HttpConstants.DEFAULT_WORKER_COUNT;
 import static org.wso2.extension.siddhi.io.http.util.HttpConstants.SOCKET_IDEAL_TIMEOUT_VALUE;
@@ -404,7 +403,7 @@ public class HttpSource extends Source {
      *                            Listener will then pass on the events to the appropriate mappers for processing .
      * @param optionHolder        Option holder containing static listenerConfiguration related to the {@link Source}
      * @param configReader        to read the {@link Source} related system listenerConfiguration.
-     * @param siddhiAppContext    the context of the {@link org.wso2.siddhi.query.api.SiddhiApp} used to get siddhi
+     * @param siddhiAppContext    the context of the {@link io.siddhi.query.api.SiddhiApp} used to get siddhi
      *                            related utilty functions.
      */
     @Override
@@ -563,28 +562,5 @@ public class HttpSource extends Source {
         if ((httpSourceListener != null) && (httpSourceListener.isPaused())) {
             httpSourceListener.resume();
         }
-    }
-
-    /**
-     * Used to collect the serializable state of the processing element, that need to be
-     * persisted for the reconstructing the element to the same state on a different point of time
-     *
-     * @return stateful objects of the processing element as a map
-     */
-    @Override
-    public Map<String, Object> currentState() {
-        //no current state
-        return null;
-    }
-
-    /**
-     * Used to restore serialized state of the processing element, for reconstructing
-     *
-     * @param map stateful objects of the element as a map.
-     *            This is the same map that is created upon calling currentState() method.
-     */
-    @Override
-    public void restoreState(Map<String, Object> map) {
-        // no state to restore
     }
 }

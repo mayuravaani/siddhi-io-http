@@ -19,7 +19,6 @@
 package org.wso2.extension.siddhi.io.http.sink.util;
 
 import com.sun.net.httpserver.HttpServer;
-
 import org.apache.log4j.Logger;
 
 import java.io.IOException;

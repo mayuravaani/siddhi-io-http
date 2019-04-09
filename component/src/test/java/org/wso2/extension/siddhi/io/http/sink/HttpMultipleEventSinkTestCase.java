@@ -18,6 +18,9 @@
  */
 package org.wso2.extension.siddhi.io.http.sink;
 
+import io.siddhi.core.SiddhiAppRuntime;
+import io.siddhi.core.SiddhiManager;
+import io.siddhi.core.stream.input.InputHandler;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggingEvent;
@@ -26,9 +29,6 @@ import org.testng.annotations.Test;
 import org.wso2.extension.siddhi.io.http.sink.util.HttpServerListener;
 import org.wso2.extension.siddhi.io.http.sink.util.HttpServerListenerHandler;
 import org.wso2.extension.siddhi.map.xml.sinkmapper.XMLSinkMapper;
-import org.wso2.siddhi.core.SiddhiAppRuntime;
-import org.wso2.siddhi.core.SiddhiManager;
-import org.wso2.siddhi.core.stream.input.InputHandler;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -18,21 +18,19 @@
  */
 package org.wso2.extension.siddhi.io.http.source;
 
+import io.siddhi.annotation.Example;
+import io.siddhi.annotation.Extension;
+import io.siddhi.annotation.Parameter;
+import io.siddhi.annotation.util.DataType;
+import io.siddhi.core.config.SiddhiAppContext;
+import io.siddhi.core.exception.ConnectionUnavailableException;
+import io.siddhi.core.stream.input.source.Source;
+import io.siddhi.core.stream.input.source.SourceEventListener;
+import io.siddhi.core.util.config.ConfigReader;
+import io.siddhi.core.util.transport.OptionHolder;
 import org.apache.log4j.Logger;
 import org.wso2.extension.siddhi.io.http.util.HTTPSourceRegistry;
 import org.wso2.extension.siddhi.io.http.util.HttpConstants;
-import org.wso2.siddhi.annotation.Example;
-import org.wso2.siddhi.annotation.Extension;
-import org.wso2.siddhi.annotation.Parameter;
-import org.wso2.siddhi.annotation.util.DataType;
-import org.wso2.siddhi.core.config.SiddhiAppContext;
-import org.wso2.siddhi.core.exception.ConnectionUnavailableException;
-import org.wso2.siddhi.core.stream.input.source.Source;
-import org.wso2.siddhi.core.stream.input.source.SourceEventListener;
-import org.wso2.siddhi.core.util.config.ConfigReader;
-import org.wso2.siddhi.core.util.transport.OptionHolder;
-
-import java.util.Map;
 
 import static org.wso2.extension.siddhi.io.http.util.HttpConstants.DEFAULT_WORKER_COUNT;
 
@@ -166,16 +164,6 @@ public class HttpResponseSource extends Source {
 
     @Override
     public void resume() {
-
-    }
-
-    @Override
-    public Map<String, Object> currentState() {
-        return null;
-    }
-
-    @Override
-    public void restoreState(Map<String, Object> map) {
 
     }
 

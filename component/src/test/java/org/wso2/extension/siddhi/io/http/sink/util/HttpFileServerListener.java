@@ -21,7 +21,6 @@ package org.wso2.extension.siddhi.io.http.sink.util;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 

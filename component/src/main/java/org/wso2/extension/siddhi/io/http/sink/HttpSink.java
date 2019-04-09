@@ -26,6 +26,20 @@ import io.netty.handler.codec.http.DefaultLastHttpContent;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.handler.codec.http.HttpMethod;
 import io.netty.handler.codec.http.HttpVersion;
+import io.siddhi.annotation.Example;
+import io.siddhi.annotation.Extension;
+import io.siddhi.annotation.Parameter;
+import io.siddhi.annotation.SystemParameter;
+import io.siddhi.annotation.util.DataType;
+import io.siddhi.core.config.SiddhiAppContext;
+import io.siddhi.core.exception.SiddhiAppCreationException;
+import io.siddhi.core.exception.SiddhiAppRuntimeException;
+import io.siddhi.core.stream.output.sink.Sink;
+import io.siddhi.core.util.config.ConfigReader;
+import io.siddhi.core.util.transport.DynamicOptions;
+import io.siddhi.core.util.transport.Option;
+import io.siddhi.core.util.transport.OptionHolder;
+import io.siddhi.query.api.definition.StreamDefinition;
 import org.apache.log4j.Logger;
 import org.wso2.carbon.messaging.Header;
 import org.wso2.extension.siddhi.io.http.sink.exception.HttpSinkAdaptorRuntimeException;
@@ -35,20 +49,6 @@ import org.wso2.extension.siddhi.io.http.sink.updatetoken.HttpsClient;
 import org.wso2.extension.siddhi.io.http.sink.util.HttpSinkUtil;
 import org.wso2.extension.siddhi.io.http.util.HttpConstants;
 import org.wso2.extension.siddhi.io.http.util.HttpIoUtil;
-import org.wso2.siddhi.annotation.Example;
-import org.wso2.siddhi.annotation.Extension;
-import org.wso2.siddhi.annotation.Parameter;
-import org.wso2.siddhi.annotation.SystemParameter;
-import org.wso2.siddhi.annotation.util.DataType;
-import org.wso2.siddhi.core.config.SiddhiAppContext;
-import org.wso2.siddhi.core.exception.SiddhiAppCreationException;
-import org.wso2.siddhi.core.exception.SiddhiAppRuntimeException;
-import org.wso2.siddhi.core.stream.output.sink.Sink;
-import org.wso2.siddhi.core.util.config.ConfigReader;
-import org.wso2.siddhi.core.util.transport.DynamicOptions;
-import org.wso2.siddhi.core.util.transport.Option;
-import org.wso2.siddhi.core.util.transport.OptionHolder;
-import org.wso2.siddhi.query.api.definition.StreamDefinition;
 import org.wso2.transport.http.netty.contract.Constants;
 import org.wso2.transport.http.netty.contract.HttpClientConnector;
 import org.wso2.transport.http.netty.contract.HttpResponseFuture;
@@ -561,7 +561,7 @@ public class HttpSink extends Sink {
      * @param optionHolder           Option holder containing static and dynamic configuration related
      *                               to the {@link Sink}
      * @param configReader           to read the sink related system configuration.
-     * @param siddhiAppContext       the context of the {@link org.wso2.siddhi.query.api.SiddhiApp} used to
+     * @param siddhiAppContext       the context of the {@link io.siddhi.query.api.SiddhiApp} used to
      *                               get siddhi related utilty functions.
      */
     @Override
@@ -947,31 +947,6 @@ public class HttpSink extends Sink {
             clientConnector = null;
             log.info("Server connector for url " + publisherURL + " disconnected.");
         }
-    }
-
-    /**
-     * Used to collect the serializable state of the processing element, that need to be
-     * persisted for reconstructing the element to the same state on a different point of time
-     * This is also used to identify the internal states and debuging
-     *
-     * @return all internal states should be return as an map with meaning full keys
-     */
-    @Override
-    public Map<String, Object> currentState() {
-        //no current state.
-        return null;
-    }
-
-    /**
-     * Used to restore serialized state of the processing element, for reconstructing
-     * the element to the same state as if was on a previous point of time.
-     *
-     * @param state the stateful objects of the processing element as a map.
-     *              This map will have the  same keys that is created upon calling currentState() method.
-     */
-    @Override
-    public void restoreState(Map<String, Object> state) {
-        //no need to maintain.
     }
 
     /**

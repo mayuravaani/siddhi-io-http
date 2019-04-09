@@ -18,7 +18,7 @@
  */
 package org.wso2.extension.siddhi.io.http.source;
 
-import org.wso2.siddhi.core.exception.SiddhiAppCreationException;
+import io.siddhi.core.exception.SiddhiAppCreationException;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

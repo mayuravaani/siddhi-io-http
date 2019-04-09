@@ -15,6 +15,9 @@
  */
 package org.wso2.extension.siddhi.io.http.test.osgi;
 
+import io.siddhi.core.SiddhiAppRuntime;
+import io.siddhi.core.SiddhiManager;
+import io.siddhi.core.stream.input.InputHandler;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.ExamFactory;
 import org.ops4j.pax.exam.Option;
@@ -30,9 +33,6 @@ import org.wso2.carbon.container.options.CarbonDistributionOption;
 import org.wso2.carbon.kernel.CarbonServerInfo;
 import org.wso2.extension.siddhi.io.http.test.osgi.sink.util.HttpServerListenerHandler;
 import org.wso2.extension.siddhi.map.xml.sinkmapper.XMLSinkMapper;
-import org.wso2.siddhi.core.SiddhiAppRuntime;
-import org.wso2.siddhi.core.SiddhiManager;
-import org.wso2.siddhi.core.stream.input.InputHandler;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

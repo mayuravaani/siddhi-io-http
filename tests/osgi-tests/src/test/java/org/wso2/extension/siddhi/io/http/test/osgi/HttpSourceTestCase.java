@@ -15,6 +15,14 @@
  */
 package org.wso2.extension.siddhi.io.http.test.osgi;
 
+import io.siddhi.core.SiddhiAppRuntime;
+import io.siddhi.core.SiddhiManager;
+import io.siddhi.core.event.Event;
+import io.siddhi.core.query.output.callback.QueryCallback;
+import io.siddhi.core.util.EventPrinter;
+import io.siddhi.core.util.SiddhiTestHelper;
+import io.siddhi.core.util.persistence.InMemoryPersistenceStore;
+import io.siddhi.core.util.persistence.PersistenceStore;
 import org.apache.log4j.Logger;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.ExamFactory;
@@ -32,14 +40,6 @@ import org.wso2.carbon.container.options.CarbonDistributionOption;
 import org.wso2.carbon.kernel.CarbonServerInfo;
 import org.wso2.extension.siddhi.io.http.test.osgi.source.util.TestUtil;
 import org.wso2.extension.siddhi.map.text.sourcemapper.TextSourceMapper;
-import org.wso2.siddhi.core.SiddhiAppRuntime;
-import org.wso2.siddhi.core.SiddhiManager;
-import org.wso2.siddhi.core.event.Event;
-import org.wso2.siddhi.core.query.output.callback.QueryCallback;
-import org.wso2.siddhi.core.util.EventPrinter;
-import org.wso2.siddhi.core.util.SiddhiTestHelper;
-import org.wso2.siddhi.core.util.persistence.InMemoryPersistenceStore;
-import org.wso2.siddhi.core.util.persistence.PersistenceStore;
 
 import java.net.URI;
 import java.nio.file.Path;

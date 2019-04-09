@@ -18,13 +18,13 @@
  */
 package org.wso2.extension.siddhi.io.http.source;
 
+import io.siddhi.core.exception.SiddhiAppCreationException;
+import io.siddhi.core.stream.input.source.SourceEventListener;
+import io.siddhi.core.util.config.ConfigReader;
 import org.apache.log4j.Logger;
 import org.wso2.extension.siddhi.io.http.source.exception.HttpSourceAdaptorRuntimeException;
 import org.wso2.extension.siddhi.io.http.source.util.HttpSourceUtil;
 import org.wso2.extension.siddhi.io.http.util.HttpConstants;
-import org.wso2.siddhi.core.exception.SiddhiAppCreationException;
-import org.wso2.siddhi.core.stream.input.source.SourceEventListener;
-import org.wso2.siddhi.core.util.config.ConfigReader;
 import org.wso2.transport.http.netty.contract.HttpWsConnectorFactory;
 import org.wso2.transport.http.netty.contract.ServerConnector;
 import org.wso2.transport.http.netty.contract.ServerConnectorFuture;

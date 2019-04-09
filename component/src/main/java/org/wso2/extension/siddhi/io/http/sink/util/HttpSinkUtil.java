@@ -18,13 +18,13 @@
  */
 package org.wso2.extension.siddhi.io.http.sink.util;
 
+import io.siddhi.core.exception.SiddhiAppCreationException;
+import io.siddhi.core.util.config.ConfigReader;
 import org.apache.log4j.Logger;
 import org.wso2.carbon.messaging.Header;
 import org.wso2.extension.siddhi.io.http.sink.exception.HttpSinkAdaptorRuntimeException;
 import org.wso2.extension.siddhi.io.http.util.HttpConstants;
 import org.wso2.extension.siddhi.io.http.util.TrpPropertyTypes;
-import org.wso2.siddhi.core.exception.SiddhiAppCreationException;
-import org.wso2.siddhi.core.util.config.ConfigReader;
 import org.wso2.transport.http.netty.contract.Constants;
 import org.wso2.transport.http.netty.contract.config.SenderConfiguration;
 
